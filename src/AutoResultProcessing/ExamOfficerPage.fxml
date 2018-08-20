@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="549.0" styleClass="background" stylesheets="@css/Login.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AutoResultProcessing.ExamOfficerPageController">
+   <children>
+      <AnchorPane fx:id="container" layoutX="-64.0" layoutY="183.0" onMouseClicked="#requestfocus" onMouseDragged="#pick" onMousePressed="#determine" onMouseReleased="#drop" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="360.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label id="department" layoutX="89.0" layoutY="72.0" style="-fx-text-fill: lightgrey;" text="COMPUTER SCIENCE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Signika-Light" size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <Label id="lecturerName" layoutX="90.0" layoutY="51.0" style="-fx-text-fill: lightgrey;" text="PROF. HEINZ SCOTT">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Signika-Light" size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <Label id="institution" layoutX="90.0" layoutY="29.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="220.0" style="-fx-text-fill: lightgrey;" text="UNIVERSITY OF LAGOS, AKOKA">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Signika-Light" size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <ImageView id="institutionImage" fitHeight="48.0" fitWidth="44.0" layoutX="314.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow height="5.0" radius="2.0" width="5.0">
+                     <input>
+                        <DropShadow color="#008cba" height="10.0" radius="4.5" width="10.0" />
+                     </input>
+                  </InnerShadow>
+               </effect>
+               <image>
+                  <Image url="@../../../../../Desktop/University%20Logos/logo.jpg" />
+               </image>
+            </ImageView>
+            <ImageView id="lecturerImage" fitHeight="99.0" fitWidth="66.0" layoutX="12.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow height="5.0" radius="2.0" width="5.0">
+                     <input>
+                        <DropShadow color="#008cba" />
+                     </input>
+                  </InnerShadow>
+               </effect>
+               <image>
+                  <Image url="@../../../../../Desktop/Faces/Lecturer/1398679087_shutterstock_147930263.jpg" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER" blendMode="HARD_LIGHT" layoutX="472.0" layoutY="6.0" mnemonicParsing="false" onAction="#goToMainScreen" prefHeight="30.0" prefWidth="28.0" styleClass="hyperlink-button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="17.0" layoutY="72.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@img/search1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Search Student">
+                     <font>
+                        <Font name="SansSerif Regular" size="15.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
+               <effect>
+                  <DropShadow height="10.0" offsetX="-1.0" offsetY="-1.0" radius="4.5" width="10.0" />
+               </effect>
+            </Button>
+            <Button id="no-color" fx:id="btnClose" blendMode="HARD_LIGHT" cancelButton="true" layoutX="511.0" layoutY="1.0" mnemonicParsing="false" onAction="#closeButtonAction" onMouseEntered="#hover_in" onMouseExited="#hover_out" prefHeight="36.0" prefWidth="0.0" style="-fx-background-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView id="close-button" fitHeight="28.0" fitWidth="66.0" layoutX="5.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" styleClass="no-margin">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@img/closeImage-grey.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow height="10.0" offsetX="-1.0" offsetY="-1.0" radius="4.5" width="10.0" />
+               </effect>
+            </Button>
+            <Button alignment="CENTER" blendMode="HARD_LIGHT" layoutX="511.0" layoutY="46.0" mnemonicParsing="false" onAction="#goToViewStudentByCourse" prefHeight="0.0" prefWidth="23.0" styleClass="hyperlink-button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="26.0" layoutX="17.0" layoutY="72.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@img/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Edit Student Records">
+                     <font>
+                        <Font name="SansSerif Regular" size="15.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
+               <effect>
+                  <DropShadow height="10.0" offsetX="-1.0" offsetY="-1.0" radius="4.5" width="10.0" />
+               </effect>
+            </Button>
+         </children>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </AnchorPane>
+      <TabPane layoutY="115.0" prefHeight="402.0" prefWidth="549.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <tabs>
+          <Tab text="Student Request">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="549.0">
+                     <children>
+                        <ScrollPane layoutX="212.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                           <content>
+                              <VBox fx:id="studentResultContent" layoutX="37.0" layoutY="29.0" prefHeight="336.0" prefWidth="521.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="409.0" AnchorPane.topAnchor="29.0" />
+                           </content>
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </ScrollPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Activity Log">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="ActivityTable" layoutX="18.0" layoutY="54.0" prefHeight="302.0" prefWidth="510.0">
+                           <columns>
+                              <TableColumn fx:id="ModifierIdCol" prefWidth="105.0" text="Modifier Id" />
+                              <TableColumn fx:id="ModificationTimeCol" prefWidth="175.0" text="Modification Time" />
+                              <TableColumn fx:id="ActivityTypeCol" prefWidth="226.0" text="Activity Type" />
+                           </columns>
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </TableView>
+                        <ComboBox id="activity" fx:id="ActivityTypeCbox" blendMode="SOFT_LIGHT" layoutX="19.0" layoutY="11.0" prefHeight="30.0" prefWidth="255.0" promptText="Select ActivityType">
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </ComboBox>
+                        <DatePicker fx:id="fromDate" blendMode="SOFT_LIGHT" editable="false" layoutX="282.0" layoutY="11.0" prefHeight="31.0" prefWidth="119.0" promptText="From">
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </DatePicker>
+                        <DatePicker fx:id="toDate" blendMode="SOFT_LIGHT" editable="false" layoutX="410.0" layoutY="11.0" prefHeight="31.0" prefWidth="117.0" promptText="To">
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </DatePicker>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Generate BroadSheet">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane layoutX="20.0" layoutY="52.0" prefHeight="308.0" prefWidth="506.0" style="-fx-border-color: black;">
+                          <content>
+                            <AnchorPane fx:id="resultContent" minHeight="0.0" minWidth="0.0" prefHeight="287.0" prefWidth="481.0" />
+                          </content>
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </ScrollPane>
+                        <ComboBox fx:id="level" blendMode="SOFT_LIGHT" layoutX="332.0" layoutY="11.0" prefHeight="30.0" prefWidth="74.0" promptText="Level">
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </ComboBox>
+                        <ComboBox fx:id="department" blendMode="SOFT_LIGHT" layoutX="135.0" layoutY="11.0" prefHeight="30.0" prefWidth="197.0" promptText="Department">
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </ComboBox>
+                        <ComboBox fx:id="institution" blendMode="SOFT_LIGHT" layoutX="20.0" layoutY="11.0" prefHeight="30.0" prefWidth="115.0" promptText="Institution">
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </ComboBox>
+                        <ComboBox fx:id="session" blendMode="SOFT_LIGHT" layoutX="406.0" layoutY="11.0" prefHeight="30.0" prefWidth="120.0" promptText="Session">
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </ComboBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Course Requirement">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table" editable="true" layoutX="19.0" layoutY="44.0" prefHeight="217.0" prefWidth="509.0">
+                           <columns>
+                              <TableColumn fx:id="CRLevel" prefWidth="44.0" text="Level" />
+                              <TableColumn fx:id="CRSemester" editable="false" prefWidth="69.0" style="-fx-alignment: center;" text="Semester" />
+                              <TableColumn fx:id="CRSemesterComp" editable="false" prefWidth="106.0" style="-fx-alignment: center;" text="SemesterComp" />
+                              <TableColumn fx:id="CRSemesterElect" editable="false" prefWidth="99.0" style="-fx-alignment: center;" text="SemesterElect" />
+                              <TableColumn fx:id="CRSessionComp" minWidth="2.0" prefWidth="95.0" style="-fx-alignment: center;" text="SessionComp" />
+                              <TableColumn fx:id="CRSessionElect" prefWidth="90.0" text="SessionElect" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="commitButton" layoutX="394.0" layoutY="315.0" mnemonicParsing="false" onMouseEntered="#hover_in" onMouseExited="#hover_out" prefHeight="40.0" prefWidth="120.0" styleClass="course-reg-button" text="Commit">
+                           <font>
+                              <Font name="Arimo" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="addButton" layoutX="116.0" layoutY="315.0" mnemonicParsing="false" onMouseEntered="#hover_in" onMouseExited="#hover_out" prefHeight="41.0" prefWidth="120.0" styleClass="course-reg-button" text="Add Result">
+                           <font>
+                              <Font name="Arimo" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <TextField fx:id="tfSemesterComp" alignment="CENTER" layoutX="94.0" layoutY="271.0" prefHeight="35.0" prefWidth="44.0" promptText="SeC" styleClass="course-reg-textfield">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfSemesterElect" alignment="CENTER" layoutX="140.0" layoutY="271.0" prefHeight="35.0" prefWidth="44.0" promptText="SeE" styleClass="course-reg-textfield">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfSessionComp" alignment="CENTER" layoutX="186.0" layoutY="271.0" prefHeight="35.0" prefWidth="44.0" promptText="SsC" styleClass="course-reg-textfield">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfSessionElect" alignment="CENTER" layoutX="232.0" layoutY="271.0" prefHeight="35.0" prefWidth="44.0" promptText="SsE" styleClass="course-reg-textfield">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <ComboBox fx:id="level1" blendMode="SOFT_LIGHT" layoutX="19.0" layoutY="273.0" prefHeight="30.0" prefWidth="72.0" promptText="Level">
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </ComboBox>
+                        <ComboBox fx:id="department1" blendMode="SOFT_LIGHT" layoutX="331.0" layoutY="7.0" prefHeight="30.0" prefWidth="197.0" promptText="Department">
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </ComboBox>
+                        <ComboBox fx:id="institution1" blendMode="SOFT_LIGHT" layoutX="19.0" layoutY="7.0" prefHeight="30.0" prefWidth="115.0" promptText="Institution">
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </ComboBox>
+                        <ComboBox fx:id="semester1" blendMode="SOFT_LIGHT" layoutX="279.0" layoutY="273.0" prefHeight="30.0" prefWidth="93.0" promptText="Semester">
+                           <effect>
+                              <DropShadow height="18.0" radius="8.5" width="18.0" />
+                           </effect>
+                        </ComboBox>
+                        <ImageView fx:id="addImage" fitHeight="45.0" fitWidth="55.0" layoutX="55.0" layoutY="313.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/commit.fw.png" />
+                           </image>
+                           <effect>
+                              <DropShadow color="#264626" height="15.0" radius="7.0" width="15.0" />
+                           </effect>
+                        </ImageView>
+                        <ImageView fx:id="commitImage" fitHeight="45.0" fitWidth="55.0" layoutX="331.0" layoutY="313.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                           <effect>
+                              <DropShadow color="#264626" height="15.0" radius="7.0" width="15.0" />
+                           </effect>
+                           <image>
+                              <Image url="@img/commit.fw.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button alignment="CENTER" blendMode="HARD_LIGHT" layoutX="508.0" layoutY="91.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="28.0" styleClass="hyperlink-button">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="27.0" layoutX="17.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="logout">
+               <font>
+                  <Font name="SansSerif Regular" size="15.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+         <effect>
+            <DropShadow height="10.0" offsetX="-1.0" offsetY="-1.0" radius="4.5" width="10.0" />
+         </effect>
+      </Button>
+      <Button id="examOfficer" fx:id="btnSearchPortal" alignment="CENTER" blendMode="HARD_LIGHT" layoutX="431.0" layoutY="5.0" mnemonicParsing="false" onAction="#goToSearchResult" prefHeight="26.0" prefWidth="26.0" style="-fx-border-width: 3; -fx-border-insets: -1;" styleClass="hyperlink-button">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="17.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/examofficer.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <tooltip>
+            <Tooltip text="go to search student results">
+               <font>
+                  <Font name="SansSerif Regular" size="15.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+         <effect>
+            <DropShadow height="10.0" offsetX="-1.0" radius="4.5" width="10.0" />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
