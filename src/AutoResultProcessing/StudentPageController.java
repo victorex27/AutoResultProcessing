@@ -31,6 +31,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
@@ -257,10 +258,16 @@ public class StudentPageController implements Initializable, ControlledScreen {
         logoutBtnPt = new ParallelTransition(logoutBtn, logoutBtnFt, logoutBtnSt);
         logoutBtnSt.interpolatorProperty().set(Interpolator.EASE_IN);
     }
+    private EventHandler<ActionEvent> handler ;
     
     //dropdown items from list for courses - courseCbo
     private void getCourseList() throws SQLException {
-//        courseCbo.getItems().clear();
+        handler = courseCbo.getOnAction();
+        
+        // Onaction is trigered any time the combo list is changed.
+        courseCbo.setOnAction(null);
+        courseCbo.getItems().clear();
+        
         //add failed courses to registration list
         String queryString = "select distinct SubjectCode, SubjectTitle, Subject.status, resultScore "
                 + "from Subject, student, result where Subject.StudentLevel <= Student.StudentLevel AND StudentIDN = ? "
@@ -282,7 +289,7 @@ public class StudentPageController implements Initializable, ControlledScreen {
         
         //add course for student's level yet to be registered
         queryString = "select distinct SubjectCode, SubjectTitle, Subject.status from Subject, student where studentIDN = ? "
-                + "AND Subject.StudentLevel <= Student.studentLevel AND Term = ? AND Student.institution = Subject.institution "
+                + "AND Subject.StudentLevel = Student.studentLevel AND Term = ? AND Student.institution = Subject.institution "
                 + "AND not exists(select ResultSubjectCode from result where resultSubjectCode = subjectCode)";
         statement = connection.prepareStatement(queryString);
         statement.setString(1, matric); 
@@ -293,11 +300,19 @@ public class StudentPageController implements Initializable, ControlledScreen {
                     rSet.getString("SubjectTitle"), rSet.getString("status"));
             courseCbo.getItems().add(courseItem);
         }
+        
+        
+        //System.out.println("Size of combo list"+courseCbo.getItems().size());
+        if(courseCbo.getItems().size() > 0)
+            courseCbo.setOnAction(handler);
+            
     }
 
     @FXML
     private void selectCourse(ActionEvent event) throws SQLException {
         addCourse(((CourseListItem) courseCbo.getValue()).getCourseCode());
+        
+        //System.out.println("the value is "+courseCbo.getValue());
         
     }
     
@@ -354,7 +369,9 @@ public class StudentPageController implements Initializable, ControlledScreen {
             statement.setString(3, matric);
             statement.execute();
             viewCourses(matric);
+            courseCbo.setOnAction(null);
             courseCbo.getItems().remove((CourseListItem) courseCbo.getValue());
+            courseCbo.setOnAction(handler);
         }
         else
             showFailedPreRequisite(array, courseCode);
